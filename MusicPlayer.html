@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="MusicPlayer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="main-nav-container" style="z-index: 99;">
+    <div class="home-section">
+        <div class="brand-logo"><div class="brand-img">
+            <div class="brand-img-logo"></div>
+        </div>
+    <div class="brand-name"><a href="MusicPlayer.html">Player</a></div>
+    </div>
+        <div class="home-section-2">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </div>
+    <div class="explore-section">
+        <div class="fav"><i class="fa fa-heart"></i></div>
+        <div class="darkmode"><i class="fa fa-moon"></i></div>
+        <div class="login"><a>LoGin</a></div>
+        <div class="signup"><a>SignUp</a></div>
+    </div>
+</div>
+<!--The Body starts here -->
+
+<div class="maincontainer">
+        <!-- the side Bar-->
+<div class="sidenavmain">
+    <div class="sidenav">
+    <div class="top-albums"><input type="text" placeholder="&#128269 Search Song"></div>
+    <div class="top-albums"><a>Best English Songs</a></div>
+    <div class="top-albums"><a>Hindi Hit Songs</a></div>
+</div>
+
+<div class="sidenav2">
+    <div class="createPlaylist"><div class="create"><a>Create Playlist</a></div></div>
+    <div class="song-which-is-playing">
+    </div>
+</div>
+</div>
+    <!-- the container-->
+    <div class="container">
+        <div class="heading"><h1>Top Charts - World Wide</h1></div>
+<div class="songList">
+    <div class="songListContainer">
+        <div class="songItem" onclick="PlaySong(event)" id="10">
+            <div class="img" style="background-image: url(image/letyou.jpg);"></div>
+            <p class="name">Let Me Love YOu</p>
+        </div>
+        <div class="songItem" onclick="PlaySong(event)" id="2">
+             <div class="img" style="background-image: url(image/girlsyou.jpg);"></div>
+            <p class="name">Girls Like You</p>
+        </div>
+        <div class="songItem"onclick="PlaySong(event)" id="3">
+            <div class="img" style="background-image: url(image/seeyou.jpg);"></div>
+            <p class="name">See You Again</p>
+        </div>
+        <div class="songItem" onclick="PlaySong(event)" id="4">
+            <div class="img" style="background-image: url(image/photograph.jpg);"></div>
+            <p class="name">Photograph</p>
+        </div>
+        <div class="songItem" onclick="PlaySong(event)" id="5">
+            <div class="img" style="background-image: url(image/cupid.jpg);"></div>
+            <p class="name">Cupid</p>
+        </div>
+        <div class="songItem" onclick="PlaySong(event)" id="6">
+            <div class="img" style="background-image: url(image/untilyou.jpg);"></div>
+            <p class="name">Until I Found You</p>
+        </div>
+        <div class="songItem" onclick="PlaySong(event)" id="7">
+            <div class="img" style="background-image: url(image/asitwas.jpg);"></div>
+            <p class="name">As It Was</p>
+        </div>
+        <div class="songItem" onclick="PlaySong(event)" id="8">
+            <div class="img" style="background-image: url(image/nightchanges.jpg);"></div>
+            <p class="name">Night Changes</p>
+        </div>
+        <div class="songItem" onclick="PlaySong(event)" id="9">
+            <div class="img" style="background-image: url(image/boywithluv.jpg);"></div>
+            <p class="name">Boy With Luv</p>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="social-media-main">
+        <div class="social-media"><i class="fab fa-facebook"></i></i></div>
+        <div class="social-media"><i class="fab fa-twitter"></i></i></div>
+        <div class="social-media"><i class="fab fa-instagram"></i></div>
+    </div>
+</div>
+
+
+<!-- the bottom Bar-->
+<div class="bottom-main" id="bottommain" onscroll="hideScroll()">
+    <div class="bottom-info">
+    <div class="songImgContainer">
+        <div class="songImg" id="songimage"><div class="gif" id="soundwave"></div>
+    </div>
+    </div>
+    <div class="song-name-container">
+        <div class="song-name"><p id="songname">MusicPlayer</p></div>
+        <div class="song-artist" id="songartist"><p>Listen Awesome Music</p></div>
+    </div>
+</div>
+    <div class="bottom">
+        <div class="controloption">
+        <div class="icons-main">
+            <div class="icons">
+                <i class="fa fa-step-backward" id="Backward" onclick="prevPlay()" ></i>
+                <i class="fa fa-play-circle" id="masterPlay" onclick="playpause()"></i>
+                <i class="fa fa-step-forward" id="Forward" onclick="nextPlay()"></i>
+            </div>
+        </div>
+        <div class="progressBarContainer" id="progressContainer">
+            <div class="progress-duration-meter">
+                <div id="CurrentTime" style="font-family:'Poppins', sans-serif;"><p style="color: white; font-size: 15px;" id="C">0:00</p></div>
+                <div id="Duration" style="font-family:'Poppins', sans-serif;"><p style="color: white; font-size: 15px;" id="D">0:00</p></div>
+            </div>
+                <div class="progressmeter">
+                    <input type="range" name="" id="progressrange" value="0" min="0" max="40">
+                </div>
+            </div>
+            </div>
+            <div class="volumecontrolmain">
+                <div class="volumelogo"><i class="fa fa-volume-up" aria-hidden="true"></i>
+                    <!-- <i class="fa fa-volume-down" aria-hidden="true"></i> -->
+                </div>
+                <!-- <div class="volumecontrol"><input type="range" id="volume" min="0" max="100" value="50" on></div> -->
+        </div>
+    </div>
+</div>
+<div class="footer-main">
+    <div class="footer">
+      <div class="row1">
+        <div class="brand-logo2">
+        <div class="brand-logo-div2">
+       <p>Player</p>
+  </div>
+        </div>
+        <div class="social-media2">
+          <div class="social-media-div2">
+            <ul>
+              <li><a><i class="fa fa-instagram"></i></a></li>
+              <li><a><i class="fa fa-twitter"></i></a></li>
+              <li><a><i class="fa fa-facebook"></i></a></li>
+              <li><a><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="col1"><ul>
+          <li><a>Job</a></li>
+          <li><a>Partners</a></li>
+          <li><a>company</a></li>
+          <li><a>Investor Relation</a></li>
+          <li><a>Press</a></li>
+          <li><a>Mobile App</a></li>
+          </ul></div>
+        <div class="col2"><ul>
+          <li><a>Privacy</a></li>
+          <li><a>Cyber Security</a></li>
+          <li><a>Notices</a></li>
+          <li><a>New Ventures</a></li>
+          <li><a>Terms and Condition</a></li>
+          <li><a>Legal Information</a></li>
+          </ul></div>
+        <div class="col3">
+          <div class="col3-div1">
+            <p>Want to receive exclusive <span style="color: rgb(33, 211, 146);">music albums</span>? Subscribe to our newsletter.</p>
+          </div>
+          <div class="col3-div2">
+            <div class="col3-div2-div1"><input placeholder='Email Address' class="inputEmail"></input></div>
+             <div class="col3-div2-div2"><button>Subscribe</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="row3">
+        <p>Copyright 2023 Player | All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+    <script src="MusicPlayer.js"></script>
+</body>
+</html>
