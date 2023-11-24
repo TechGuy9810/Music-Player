@@ -344,6 +344,9 @@ align-items: start;
     color:rgb(23, 192, 130);
     font-size: 35px;
 }
+.icons i:hover{
+    color: white;
+}
 .icons i:active{
     color: rgb(26, 162, 112);
 }
