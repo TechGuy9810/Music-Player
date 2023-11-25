@@ -344,9 +344,6 @@ align-items: start;
     color:rgb(23, 192, 130);
     font-size: 35px;
 }
-.icons i:hover{
-    color: white;
-}
 .icons i:active{
     color: rgb(26, 162, 112);
 }
@@ -989,12 +986,8 @@ display: none;
     justify-content: left;
     align-items: center;
 }
-.volumecontrol input{
-    writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
-    height: 5vw;
-    justify-content: left;
-
+.volumecontrolmain{
+justify-content: space-between;
 }
 .close{
     height: 20%;
@@ -1006,4 +999,24 @@ display: none;
     cursor: pointer;
     font-size: 2vw;
 }
+}
+#volume{
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    -webkit-appearance: none;
+    height: 6px;
+    background: rgb(23, 192, 130);
+    border-radius: 4px;
+    cursor: pointer;
+    margin: auto;
+    width: 80%;
+}
+#volume::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid rgb(23, 192, 130);
+    box-shadow: 0 5px 5px rgb(30, 30, 30);
 }
