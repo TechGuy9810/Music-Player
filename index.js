@@ -12,6 +12,7 @@ let songimage = document.getElementById('songimage');
 let bottommain = document.getElementById('bottommain');
 let songImg = document.getElementsByClassName('songImg');
 let progressrange = document.getElementById('progressrange');
+let volumeIcon = document.getElementById('volumeIcon');
 let songs = [
     {songName: "Let Me Love You",filePath: "Songs/10.mp3",coverPath:"image/letyou.jpg",id:"10",artist:"-by Justi Bieber"},
     {songName: "Girls Like You",filePath: "Songs/2.mp3",coverPath:"image/girlsyou.jpg",id:"2",artist:"-by Marron 5"},
@@ -61,7 +62,7 @@ audioElement.addEventListener('timeupdate',playpausetime2);
 // duration updation
 function playpausetime2()
 {
-let p = (audioElement.currentTime*audioElement.duration)*100;
+let p = (audioElement.currentTime/audioElement.duration)*100;
 progressrange.value= p;
 let min = Math.floor(audioElement.duration/60);
 let sec = Math.floor(audioElement.duration%60);
@@ -84,19 +85,46 @@ else{
     C.innerHTML = `${cm}:${cs}`;
 }
 }
+if(audioElement.currentTime==audioElement.duration)
+{
+    masterPlay.classList.remove('fa-pause-circle');
+    masterPlay.classList.add('fa-play-circle');
+    soundwave.style.opacity = 0;
+}
 }
 // progress updation
 function ProgressBarupdate2()
 {
+ if(audioElement.paused)
+ {
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+    soundwave.style.opacity = 0.3;
+ }
  audioElement.currentTime = (progressrange.value*audioElement.duration)/100;  
+}
+function changeVolume(e)
+{
+    audioElement.volume = e;
 }
 
 
 
-
-
-
-
+function changeVolumeIcon()
+{
+    if(audioElement.volume>0)
+    {
+        volumeIcon.classList.remove('fa-fa-volume-up');
+        volumeIcon.classList.add('fas-fa-volume-mute');
+        audioElement.volume=0;
+    }
+    else{
+        volumeIcon.classList.remove('fas-fa-volume-mute');
+        volumeIcon.classList.add('fa-fa-volume-up');
+        audioElement.volume=0.5;
+    }
+}
 
 //custom song
 function PlaySong(event)
