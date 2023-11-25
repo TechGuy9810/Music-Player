@@ -797,7 +797,7 @@ color: white;
     .footer{
     display: grid;
     width: 70%;
-    grid-template-rows: 10% 80% 5%;
+    grid-template-rows: 10% 70% 5%;
 }
 .songList{
     width: 100%;
