@@ -61,12 +61,12 @@ audioElement.addEventListener('timeupdate',playpausetime2);
 // duration updation
 function playpausetime2()
 {
-let p = (audioElement.currentTime);
+let p = (audioElement.currentTime*audioElement.duration)*100;
 progressrange.value= p;
 let min = Math.floor(audioElement.duration/60);
 let sec = Math.floor(audioElement.duration%60);
-let cm =  Math.floor(p/60);
-let cs =  Math.floor(p%60);
+let cm =  Math.floor(audioElement.currentTime/60);
+let cs =  Math.floor(audioElement.currentTime%60);
 if(audioElement.duration)
 {
 if(sec<=9)
