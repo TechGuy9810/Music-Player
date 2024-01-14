@@ -5,7 +5,8 @@ The website is fully responsive and functional for most of its work like Playing
 ### Home Page
 ![image](https://github.com/TechGuy9810/Music-Player/assets/140731793/80778591-2980-42a0-b17a-312ff8bad80a)
 
-### Music Player
+
+### Song Player
 ![image](https://github.com/TechGuy9810/Music-Player/assets/140731793/bff8e3ed-794a-4070-ae4a-fb1e6d89c4d5)
 
 ### Features :
