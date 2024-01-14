@@ -2,10 +2,10 @@
 This project showcases the fundamental structure of a website using the basic trio of web technologies: **HTML**, **CSS**, and **JavaScript**. It is intentionally kept simple to help beginners understand the foundational aspects of web development.
 The website is fully responsive and functional for most of its work like Playing songs.
 
-# Home Page
+### Home Page
 ![image](https://github.com/TechGuy9810/Music-Player/assets/140731793/80778591-2980-42a0-b17a-312ff8bad80a)
 
-# Music Player
+### Music Player
 ![image](https://github.com/TechGuy9810/Music-Player/assets/140731793/bff8e3ed-794a-4070-ae4a-fb1e6d89c4d5)
 
 ### Features :
